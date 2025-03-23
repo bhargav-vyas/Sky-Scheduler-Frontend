@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from '../components/Header';
-import PaymentForm from '../components/PaymentForm';
-import Footer from '../components/Footer';
+import Header from '../components/Header'; // Correct path
+import PaymentForm from '../components/PaymentForm'; // Correct path
+import Footer from '../components/Footer'; // Correct path
 
 const PaymentPage = () => {
     return (

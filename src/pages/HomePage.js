@@ -1,7 +1,8 @@
 import React from 'react';
-import Header from '../components/Header';
-import FlightSearch from '../components/FlightSearch';
-import Footer from '../components/Footer';
+import Header from '../components/Header'; // Correct path
+import FlightSearch from '../components/FlightSearch'; // Correct path
+import Footer from '../components/Footer'; // Correct path
+
 
 const HomePage = () => {
     return (
