@@ -1,6 +1,10 @@
-import logo from './logo.svg';
+import React from 'react';
+import {BrowserRouter as Router, Route, Routers} from 'react-router-dom';
 import './App.css';
-import Home from './pages/HomePage';
+import HomePage from './pages/HomePage';
+import FlightResults from './pages/FlightResults';
+import PaymentPage from './pages/Paymentpage';
+
 
 function App() {
   return (
