@@ -1,3 +1,5 @@
+/* PaymentForm.css */
+
 .payment-form {
   background-color: white;
   border-radius: 8px;
@@ -11,6 +13,7 @@
   text-align: center;
   margin-bottom: 25px;
   color: #1a237e;
+  font-size: 1.5rem;
 }
 
 .form-group {
@@ -21,6 +24,7 @@
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
+  color: #555;
 }
 
 .form-input {
@@ -29,6 +33,36 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #1a237e;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: block;
+}
+
+.card-details {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  border-left: 3px solid #1a237e;
+}
+
+.card-row {
+  display: flex;
+  gap: 15px;
+}
+
+.card-row .form-group {
+  flex: 1;
 }
 
 .pay-button {
@@ -42,8 +76,69 @@
   font-weight: 600;
   transition: background-color 0.3s;
   width: 100%;
+  margin-top: 10px;
 }
 
 .pay-button:hover {
   background-color: #303f9f;
+}
+
+.pay-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.processing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.payment-success {
+  text-align: center;
+  padding: 30px;
+}
+
+.payment-success h2 {
+  color: #1a237e;
+  margin-bottom: 15px;
+}
+
+.payment-success p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.success-icon {
+  color: #4caf50;
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .payment-form {
+    padding: 20px;
+    margin: 20px auto;
+  }
+  
+  .card-row {
+    flex-direction: column;
+    gap: 0;
+  }
 }
