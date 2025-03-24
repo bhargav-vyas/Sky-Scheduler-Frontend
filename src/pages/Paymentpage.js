@@ -1,16 +1,16 @@
 import React from 'react';
-import Header from '../components/Header'; // Correct path
-import PaymentForm from '../components/PaymentForm'; // Correct path
-import Footer from '../components/Footer'; // Correct path
+import Header from '../Component/Header';
+import Footer from '../Component/Footer';
+import PaymentForm from '../Component/PaymentForm';
 
-const PaymentPage = () => {
+const Paymentpage = () => {
     return (
         <div className="payment-page">
             <Header />
-            <PaymentForm />
+            <PaymentForm  />
             <Footer />
         </div>
     );
 };
 
-export default PaymentPage;
+export default Paymentpage;

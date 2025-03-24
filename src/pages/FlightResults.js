@@ -1,6 +1,7 @@
 import React from 'react';
-import Header from '../components/Header'; // Correct path
-import Footer from '../components/Footer'; // Correct path
+import Header from '../Component/Header';
+import Footer from '../Component/Footer';
+
 
 const FlightResults = () => {
     return (

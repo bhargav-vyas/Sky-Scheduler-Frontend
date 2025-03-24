@@ -1,13 +1,14 @@
 import React from 'react';
-import Header from '../components/Header'; // Correct path
-import FlightSearch from '../components/FlightSearch'; // Correct path
-import Footer from '../components/Footer'; // Correct path
+import Header from '../Component/Header';
+import Footer from '../Component/Footer';
+import FlightSearch from '../Component/FlightSearch';
+
 
 
 const HomePage = () => {
     return (
         <div className="home-page">
-            <Header />
+            <Header/>
             <FlightSearch />
             <Footer />
         </div>
