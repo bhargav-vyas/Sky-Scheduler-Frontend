@@ -7,7 +7,16 @@ const FlightResults = () => {
     useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:6080/flights/search?departureAirport=JFK&arrivalAirport=LHR",); // Example API
+        const username = "admin";
+      const password = "admin123";
+      const authHeader = `Basic ${btoa(`${username}:${password}`)}`;
+        const response = await fetch("http://localhost:6080/flights/search?departureAirport=JFK&arrivalAirport=LHR", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: authHeader, // Authorization header
+          },
+        }); // Example API
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
