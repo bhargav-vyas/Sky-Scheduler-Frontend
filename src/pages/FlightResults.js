@@ -10,7 +10,7 @@ const FlightResults = () => {
         const username = "admin";
       const password = "admin123";
       const authHeader = `Basic ${btoa(`${username}:${password}`)}`;
-        const response = await fetch("http://localhost:6080/flights/search?departureAirport=JFK&arrivalAirport=LHR", {
+        const response = await fetch("http://localhost:8080/flights/search?departureAirport=JFK&arrivalAirport=LHR", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
