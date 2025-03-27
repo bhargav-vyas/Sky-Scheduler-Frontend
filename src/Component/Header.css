@@ -8,6 +8,18 @@
   top: 0;
   z-index: 1000;
   font-family: 'Inter', sans-serif;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .header-container {
@@ -23,6 +35,24 @@
   font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-logo {
+  width: 30px;
+  height: 30px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 .header nav {
@@ -57,19 +87,4 @@
 
 .header a:hover::after {
   width: 100%;
-}
-
-@media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .header nav {
-    gap: 1.5rem;
-  }
-  
-  .header h1 {
-    font-size: 1.5rem;
-  }
 }

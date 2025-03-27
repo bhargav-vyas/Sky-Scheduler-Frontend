@@ -1,84 +1,201 @@
 /* FlightSearch.css */
-.flight-search {
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 2.5rem;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  font-family: 'Inter', sans-serif;
+.flight-search-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
 }
 
-.flight-search h2 {
-  color: #1e40af;
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.8rem;
-  font-weight: 700;
+.flight-icon-animation {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    opacity: 0.1;
+    z-index: 0;
+    transform: scale(2) rotate(30deg);
 }
 
-.search-inputs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+.flight-icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    animation: float 3s ease-in-out infinite;
 }
 
-.search-field {
-  position: relative;
+.flight-icon::before,
+.flight-icon::after {
+    content: '';
+    position: absolute;
 }
 
-.search-field label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  color: #334155;
+.flight-icon::before {
+    width: 50px;
+    height: 10px;
+    background: #3b82f6;
+    border-radius: 5px;
+    top: 25px;
+    left: 5px;
 }
 
-.flight-search input {
-  width: 100%;
-  padding: 1rem 1.5rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  background-color: #f8fafc;
+.flight-icon::after {
+    width: 30px;
+    height: 5px;
+    background: #2563eb;
+    transform: rotate(45deg);
+    top: 15px;
+    left: 15px;
+    border-radius: 3px;
+    box-shadow: 25px 25px 0 #2563eb;
 }
 
-.flight-search input:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
-  outline: none;
+.flight-trail {
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(59,130,246,0.8), transparent);
+    top: 32px;
+    left: -100px;
+    animation: trail 1.5s linear infinite;
 }
 
-.search-btn {
-  width: 100%;
-  padding: 1rem;
-  background: #3b82f6;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
-.search-btn:hover {
-  background: #2563eb;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+@keyframes trail {
+    from { transform: translateX(0); }
+    to { transform: translateX(200px); opacity: 0; }
+}
+
+.flight-search-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.search-title {
+    color: #1e40af;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.flight-icon-small {
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.input-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.input-field {
+    position: relative;
+}
+
+.input-field label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #334155;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 1.5rem 1rem 3rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8fafc;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.search-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    outline: none;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 2.7rem;
+    font-size: 1.2rem;
+    color: #64748b;
+}
+
+.search-button {
+    width: 100%;
+    padding: 1rem;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    animation: fadeIn 0.7s ease-out;
+}
+
+.search-button:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button-icon {
+    font-size: 1.2rem;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
 }
 
 @media (max-width: 768px) {
-  .search-inputs {
-    grid-template-columns: 1fr;
-  }
-  
-  .flight-search {
-    padding: 1.5rem;
-    margin: 1.5rem;
-  }
+    .input-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .flight-search-form {
+        padding: 1.5rem;
+    }
+    
+    .flight-icon-animation {
+        display: none;
+    }
 }

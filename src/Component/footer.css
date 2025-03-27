@@ -1,79 +1,67 @@
-/* footer.css */
-.footer {
-  background: #0f172a;
-  color: #f8fafc;
-  padding: 4rem 2rem;
-  font-family: 'Inter', sans-serif;
-  margin-top: auto;
+/* FlightIcon.css */
+.flight-icon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin: 20px auto;
+  animation: float 3s ease-in-out infinite;
 }
 
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 3rem;
+.flight-icon::before,
+.flight-icon::after {
+  content: '';
+  position: absolute;
 }
 
-.footer-brand {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+/* Airplane body */
+.flight-icon::before {
+  width: 50px;
+  height: 10px;
+  background: #3b82f6;
+  border-radius: 5px;
+  top: 25px;
+  left: 5px;
 }
 
-.footer-logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: white;
+/* Airplane wings */
+.flight-icon::after {
+  width: 30px;
+  height: 5px;
+  background: #2563eb;
+  transform: rotate(45deg);
+  top: 15px;
+  left: 15px;
+  border-radius: 3px;
+  box-shadow: 25px 25px 0 #2563eb; /* Creates both wings */
 }
 
-.footer-description {
-  color: #94a3b8;
-  line-height: 1.6;
-  font-size: 0.9rem;
+/* Animation for floating effect */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-.footer-links h3 {
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+/* Jet trail animation */
+.flight-trail {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(59,130,246,0.8), transparent);
+  top: 32px;
+  left: -100px;
+  animation: trail 1.5s linear infinite;
 }
 
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.footer-links a {
-  color: #94a3b8;
-  text-decoration: none;
-  transition: color 0.2s ease;
-  font-size: 0.9rem;
-}
-
-.footer-links a:hover {
-  color: white;
-}
-
-.footer-bottom {
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: center;
-  color: #64748b;
-  font-size: 0.8rem;
-}
-
-@media (max-width: 768px) {
-  .footer-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+@keyframes trail {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(200px);
+    opacity: 0;
   }
 }
