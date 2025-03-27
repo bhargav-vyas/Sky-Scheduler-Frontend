@@ -1,81 +1,84 @@
 /* FlightSearch.css */
-
-/* Main container styling */
 .flight-search {
-  max-width: 500px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  font-family: 'Inter', sans-serif;
 }
 
-/* Heading style */
 .flight-search h2 {
-  color: #2a4365;
+  color: #1e40af;
   text-align: center;
-  margin-bottom: 1.8rem;
+  margin-bottom: 2rem;
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
-/* Input field styling */
+.search-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.search-field {
+  position: relative;
+}
+
+.search-field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #334155;
+}
+
 .flight-search input {
   width: 100%;
-  padding: 0.9rem 1.2rem;
-  margin-bottom: 1.2rem;
+  padding: 1rem 1.5rem;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   font-size: 1rem;
   transition: all 0.3s ease;
-  box-sizing: border-box;
-}
-
-.flight-search input::placeholder {
-  color: #a0aec0;
+  background-color: #f8fafc;
 }
 
 .flight-search input:focus {
-  border-color: #4299e1;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
 }
 
-/* Button styling */
-.flight-search button {
+.search-btn {
   width: 100%;
   padding: 1rem;
-  background-color: #3182ce;
+  background: #3b82f6;
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-top: 0.5rem;
 }
 
-.flight-search button:hover {
-  background-color: #2c5282;
+.search-btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.flight-search button:active {
-  transform: scale(0.98);
-}
-
-/* Responsive design */
-@media (max-width: 600px) {
-  .flight-search {
-    margin: 1rem;
-    padding: 1.5rem;
+@media (max-width: 768px) {
+  .search-inputs {
+    grid-template-columns: 1fr;
   }
   
-  .flight-search h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+  .flight-search {
+    padding: 1.5rem;
+    margin: 1.5rem;
   }
 }
