@@ -2,6 +2,7 @@ import React from "react";
 import "./FlightSearch.css";
 
 const FlightSearch = () => {
+    
     const [departure, setDeparture] = React.useState("");
     const [arrival, setArrival] = React.useState("");
     
