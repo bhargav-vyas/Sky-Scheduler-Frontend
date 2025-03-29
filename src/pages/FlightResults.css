@@ -1,51 +1,50 @@
-.flight-results {
+.flight-results-container {
+    padding: 20px;
+    background-color: #f0f4f8;
+    min-height: calc(100vh - 150px); /* Adjust height to account for header and footer */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    min-height: 100vh;
-    background-color: #f3f7fa;
-    font-family: 'Arial', sans-serif;
+    align-items: center;
 }
 
-.flight-results header, .flight-results footer {
-    background-color: #007bff;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-}
-
-.flight-results h2 {
-    margin: 2rem auto;
-    text-align: center;
-    font-size: 2rem;
+.flight-results-container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
     color: #333;
 }
 
-.flight-results .flight-card {
-    margin: 1rem auto;
-    padding: 1.5rem;
-    background-color: #ffffff;
+.flight-results-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    width: 80%;
+    max-width: 800px;
+}
+
+.flight-results-item {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 90%;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.flight-results .flight-card h3 {
-    font-size: 1.25rem;
-    color: #555;
-    margin-bottom: 0.5rem;
+.flight-results-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.flight-results .flight-card p {
-    margin: 0.2rem 0;
-    color: #666;
-    font-size: 1rem;
+.flight-details strong {
+    color: #007bff;
 }
 
-.flight-results .error-message {
+.error-message {
     color: red;
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.loading-message {
+    color: #666;
+    font-size: 1.2em;
 }

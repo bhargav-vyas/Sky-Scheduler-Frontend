@@ -4,8 +4,8 @@ import Footer from '../Component/Footer';
 import '../pages/FlightResults.css';
 
 const FlightResults = () => {
-    const [data, setData] = useState([]); // State to store flight data
-    const [error, setError] = useState(null); // State to store error message
+    const [data, setData] = useState([]);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -18,7 +18,7 @@ const FlightResults = () => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        Authorization: authHeader, // Authorization header
+                        Authorization: authHeader,
                     },
                 });
 
@@ -27,11 +27,11 @@ const FlightResults = () => {
                 }
 
                 const result = await response.json();
-                console.log("Fetched Flights:", result); // Debugging log
-                setData(result); // Store the fetched data
+                console.log("Fetched Flights:", result);
+                setData(result);
             } catch (err) {
-                console.error("Fetch error:", err.message); // Log any errors
-                setError(err.message); // Store the error message
+                console.error("Fetch error:", err.message);
+                setError(err.message);
             }
         };
 
@@ -39,22 +39,28 @@ const FlightResults = () => {
     }, []);
 
     return (
-        <div className="flight-results">
+        <div className="flight-results-container">
             <Header />
             <h2>Flight Results</h2>
-            {error && <p style={{ color: 'red' }}>Error: {error}</p>}
+            {error && <p className="error-message">Error: {error}</p>}
             {data.length > 0 ? (
-                <ul>
+                <ul className="flight-results-list">
                     {data.map((flight, index) => (
-                        <li key={index}>
-                            <strong>Flight ID:</strong> {flight.id} - 
-                            <strong> Name:</strong> {flight.name} - 
-                            <strong> Destination:</strong> {flight.destination}
+                        <li key={index} className="flight-results-item">
+                            <div className="flight-details">
+                                <strong>Flight Number:</strong> {flight.flightNumber} <br />
+                                <strong>From:</strong> {flight.departureAirport} <br />
+                                <strong>To:</strong> {flight.arrivalAirport} <br />
+                                <strong>Departure Time:</strong> {flight.departureTime} <br />
+                                <strong>Arrival Time:</strong> {flight.arrivalTime} <br />
+                                <strong>Price:</strong> ${flight.price} <br />
+                                <strong>Available Seats:</strong> {flight.availableSeats}
+                            </div>
                         </li>
                     ))}
                 </ul>
             ) : (
-                <p>Loading flights or no flights available.</p>
+                <p className="loading-message">Loading flights or no flights available.</p>
             )}
             <Footer />
         </div>
