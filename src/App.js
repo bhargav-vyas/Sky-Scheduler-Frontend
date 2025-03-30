@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import FlightResults from './pages/FlightResults';
 import PaymentPage from './pages/PaymentPage';
 import LoginPage from './pages/LoginPage';
+
 // import Header from './Components/Header';
 // import Footer from './Components/Footer';
 import TermsOfService from './pages/TermsOfService';
@@ -20,7 +21,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/flights" element={<FlightResults />} />
         <Route path="/payment" element={<PaymentPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path='/LoginPage' element={<LoginPage />} />
         <Route path="/terms" element={<TermsOfService />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         {/* <Route path="/cookies" element={<CookiePolicy />} /> */}
