@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../Component/Header';
 import Footer from '../Component/Footer';
-import '../pages/FlightResults.css';
+import './FlightResults.css';
 
 const FlightResults = () => {
     const [data, setData] = useState([]);

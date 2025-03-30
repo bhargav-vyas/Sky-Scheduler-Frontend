@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Header from '../Component/Header';
 import Footer from '../Component/Footer';
 import PaymentForm from '../Component/PaymentForm';
-import '../pages/Paymentpage.css';
+import './Paymentpage.css';
 
 const Paymentpage = () => {
     useEffect(() => {
