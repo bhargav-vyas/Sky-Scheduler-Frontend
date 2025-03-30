@@ -30,6 +30,10 @@ const Header = () => {
                         <span className="link-icon">💳</span>
                         <span className="link-text">Payment</span>
                     </a>
+                    <a href="/login" className="nav-link">
+                        <span className="link-icon">🔑</span>
+                        <span className="link-text">Login</span>
+                    </a>
                 </nav>
             </div>
         </header>
