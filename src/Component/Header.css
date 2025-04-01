@@ -1,0 +1,76 @@
+/* Header.css */
+.header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-left: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    margin-left: 5px;
+    animation: fly 2s infinite ease-in-out;
+}
+
+@keyframes fly {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link:hover {
+    color: #d1e7ff;
+}
+
+.link-icon {
+    margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+    .logo-text {
+        font-size: 1.5rem;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+}
